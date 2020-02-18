@@ -335,6 +335,10 @@ public:
             m_numExtParam,
             ExtBufTypeToId<typename GetPointedType<T*>::Type>::id);
         assert(p);
+	if(!p)
+	{
+		throw MFX_ERR_NULL_PTR;
+	}
         return *(reinterpret_cast<T*>(p));
     }
 
@@ -377,6 +381,10 @@ public:
                 m_basicNum,
                 ExtBufTypeToId<typename GetPointedType<T*>::Type>::id);
             assert(p);
+	    if(!p)
+	    {
+		    throw MFX_ERR_NULL_PTR;
+	    }
             return *(reinterpret_cast<T*>(p));
         }
     }
